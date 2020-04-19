@@ -13,6 +13,8 @@
       パスワード<br>
       <input type="password" v-model="password"><br>
       <button v-on:click="login">ログイン</button>
+      <button v-on:click="googleLogin">googleでログイン</button>
+      <button id="register">新規登録</button>
     </div>
   </div>
 </template>
@@ -38,6 +40,9 @@ export default {
   },
   methods : {
     ...mapActions(['setUser']),
+    googleLogin: function(){
+      firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    },
     login() {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       .then(user => {
