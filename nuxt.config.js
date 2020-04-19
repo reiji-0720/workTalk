@@ -47,6 +47,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    databaseURL: "https://login-worktalk.firebaseio.com"
   },
   /*
   ** Build configuration
