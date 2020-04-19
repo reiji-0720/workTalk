@@ -16,13 +16,6 @@
       <button v-on:click="googleLogin">googleでログイン</button>
       <button id="register">新規登録</button>
     </div>
-    <div>
-      メールアドレス<br><input id="mailAddress" type="mailAddress" required/>
-    </div>
-    <div>
-      パスワード<br><input id="password" type="password" required/>
-    </div>
-    <button id="register">新規登録</button>
   </div>
 </template>
 
