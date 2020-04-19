@@ -14,8 +14,14 @@
       <input type="password" v-model="password"><br>
       <button v-on:click="login">ログイン</button>
       <button v-on:click="googleLogin">googleでログイン</button>
-      <button id="register">新規登録</button>
     </div>
+    <div>
+      メールアドレス<br><input id="mailAddress" type="mailAddress" required/>
+    </div>
+    <div>
+      パスワード<br><input id="password" type="password" required/>
+    </div>
+    <button v-on:click="register">新規登録</button>
   </div>
 </template>
 
@@ -59,6 +65,15 @@ export default {
       }).catch((error) => {
         alert(error)
       })
+    },
+    register() {
+      var mailAddress = document.getElementById('mailAddress').value;
+      var password = document.getElementById('password').value;
+  
+      firebase.auth().createUserWithEmailAndPassword(mailAddress, password)
+      .catch(function(error) {
+      alert('登録できません（' + error.message + '）');
+      });
     }
   }
 }
