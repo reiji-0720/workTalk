@@ -29,7 +29,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: "~plugins/persistedstate.js", ssr: false }
+    { src: "~plugins/persistedstate.js", ssr: false },
+    "~/plugins/firebase.js",
   ],
   /*
   ** Nuxt.js dev-modules

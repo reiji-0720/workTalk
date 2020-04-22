@@ -14,14 +14,8 @@
       <input type="password" v-model="password"><br>
       <button v-on:click="login">ログイン</button>
       <button v-on:click="googleLogin">googleでログイン</button>
+      <button v-on:click="register">新規登録</button>
     </div>
-    <div>
-      メールアドレス<br><input id="mailAddress" type="mailAddress" required/>
-    </div>
-    <div>
-      パスワード<br><input id="password" type="password" required/>
-    </div>
-    <button v-on:click="register">新規登録</button>
   </div>
 </template>
 
