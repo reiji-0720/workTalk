@@ -29,7 +29,7 @@
 
 <script>
 import MembersOnly from "~/components/members-only.vue";
-import firebase from "~/plugins/chat";
+import firebase from '~/plugins/firebase'
 
 export default {
   data() {
