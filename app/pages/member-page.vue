@@ -58,14 +58,6 @@ export default {
   },
   methods: {
     // ログイン処理
-    doLogin() {
-      const provider = new firebase.auth.TwitterAuthProvider();
-      firebase.auth().signInWithPopup(provider);
-    },
-    // ログアウト処理
-    doLogout() {
-      firebase.auth().signOut();
-    },
     // スクロール位置を一番下に移動
     scrollBottom() {
       this.$nextTick(() => {
