@@ -42,7 +42,7 @@ export default {
   created() {
     firebase.auth().onAuthStateChanged(user => {
       this.user = user ? user : {};
-      const ref_message = firebase.database().ref("message");
+      const ref_message = firebase.database().ref("message01");
       if (user) {
         this.chat = [];
         // message に変更があったときのハンドラを登録
