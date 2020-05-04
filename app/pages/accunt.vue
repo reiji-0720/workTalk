@@ -3,6 +3,8 @@
     <!-- ログイン中に表示される画面 -->
     <div v-if="isAuthenticated">
       {{ user.email }}でログイン中です<br>
+      {{ user.displayName }}
+      <img :src="user.photoURL" alt="画像" />
       <button v-on:click="logout">ログアウト</button><br>
       <a href="/member-page-chat">メンバーページへ</a>
     </div>
@@ -24,7 +26,9 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      displayName: "",
+      photoURL: ''
     }
   },
   computed: {
@@ -39,7 +43,7 @@ export default {
   methods : {
     ...mapActions(['setUser']),
     login() {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password, this.displayName, this.photoURL)
       .then(user => {
         // ログインしたら飛ぶページを指定
         // this.$router.push("/member-page")
