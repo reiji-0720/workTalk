@@ -14,8 +14,10 @@
     "@nuxtjs/axios": "^5.3.6",
     "bootstrap-vue": "^2.11.0",
     "firebase": "^7.14.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.12.2",
     "vuex-persistedstate": "^3.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+
+  }
 }
