@@ -8,10 +8,12 @@
     </div>
     <!-- ログインしていない時に表示される画面 -->
     <div v-else>
-      メール<br>
-      <input type="text" v-model="email"><br>
-      パスワード<br>
-      <input type="password" v-model="password"><br>
+      <div>
+        メールアドレス<input id="mailAddress" type="text" required/>
+      </div>
+      <div>
+        パスワード<input id="password" type="password" required/>
+      </div>
       <button v-on:click="login">ログイン</button>
       <button v-on:click="googleLogin">googleでログイン</button>
       <button v-on:click="register">新規登録</button>
@@ -25,7 +27,7 @@ import { mapActions, mapState, mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      email: '',
+      mailAddress: '',
       password: ''
     }
   },
@@ -44,7 +46,7 @@ export default {
       firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
     },
     login() {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+      firebase.auth().signInWithEmailAndPassword(this.mailAddress, this.password)
       .then(user => {
         // ログインしたら飛ぶページを指定
         // this.$router.push("/member-page")
