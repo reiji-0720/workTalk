@@ -9,10 +9,10 @@
     <!-- ログインしていない時に表示される画面 -->
     <div v-else>
       <div>
-        メールアドレス<input id="mailAddress" type="mailAddress" required/>
+        メールアドレス<input id="mailAddress" type="mailAddress" placeholder="メールアドレス" v-model="email" required/>
       </div>
       <div>
-        パスワード<input id="password" type="password" required/>
+        パスワード<input id="password" type="password" placeholder="パスワード" v-model="password" required/>
       </div>
       <button v-on:click="login">ログイン</button>
       <button v-on:click="googleLogin">googleでログイン</button>
