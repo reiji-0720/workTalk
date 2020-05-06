@@ -9,7 +9,7 @@
     <!-- ログインしていない時に表示される画面 -->
     <div v-else>
       <div>
-        メールアドレス<input id="mailAddress" type="text" required/>
+        メールアドレス<input id="mailAddress" type="mailAddress" required/>
       </div>
       <div>
         パスワード<input id="password" type="password" required/>
@@ -27,7 +27,7 @@ import { mapActions, mapState, mapGetters } from 'vuex'
 export default {
   data() {
     return {
-      mailAddress: '',
+      email: '',
       password: ''
     }
   },
@@ -46,7 +46,7 @@ export default {
       firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
     },
     login() {
-      firebase.auth().signInWithEmailAndPassword(this.mailAddress, this.password)
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
       .then(user => {
         // ログインしたら飛ぶページを指定
         // this.$router.push("/member-page")
