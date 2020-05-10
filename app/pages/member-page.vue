@@ -23,6 +23,7 @@
         <textarea v-model="input" :disabled="!user.uid" @keydown.enter.exact.prevent="doSend"></textarea>
         <button type="submit" :disabled="!user.uid" class="send-button">Send</button>
       </form>
+      <nuxt-child></nuxt-child>
     </div>
   </members-only>
 </template>
@@ -42,7 +43,7 @@ export default {
   created() {
     firebase.auth().onAuthStateChanged(user => {
       this.user = user ? user : {};
-      const ref_message = firebase.database().ref("message");
+      const ref_message = firebase.database().ref("message/美容系/ネイリスト");
       if (user) {
         this.chat = [];
         // message に変更があったときのハンドラを登録
@@ -81,7 +82,7 @@ export default {
         // firebase にメッセージを追加
         firebase
           .database()
-          .ref("message/chat1")
+          .ref('message/美容系/ネイリスト')
           .push(
             {
               message: this.input,
