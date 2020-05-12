@@ -17,7 +17,5 @@
     "nuxt": "^2.12.2",
     "vuex-persistedstate": "^3.0.1"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }

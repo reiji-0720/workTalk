@@ -1,6 +1,6 @@
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   srcDir:'app',
   /*
   ** Headers of the page
